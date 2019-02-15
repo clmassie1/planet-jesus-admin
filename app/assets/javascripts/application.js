@@ -14,15 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-
-console.log($)
-console.log($().fileupload)
-
-
-$(function() {
-    $('.directUpload').find("input:file").each(function(i, elem) {
-      var fileInput    = $(elem);
-      console.log(fileInput);
-    });
-  });
