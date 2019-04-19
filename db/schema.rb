@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_174933) do
+ActiveRecord::Schema.define(version: 2019_04_19_184240) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "podcast_url"
+    t.string "podcast_title"
   end
 
 end

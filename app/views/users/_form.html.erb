@@ -10,20 +10,33 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :title %>
+    <%= f.text_field :podcast_title %>
   </div>
 
   <div class="field">
-    <%= f.label :avatar_url %>
+    <%= f.label :description %>
+    <%= f.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
     <%= f.file_field :avatar_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :podcast %>
+    <%= f.file_field :podcast_url %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
 
 <script>
 $(function() {
@@ -33,14 +46,15 @@ $(function() {
     var submitButton = form.find('input[type="submit"]');
     var progressBar  = $("<div class='bar'></div>");
     var barContainer = $("<div class='progress'></div>").append(progressBar);
-    var fd = $(elem);
+    var fd           = $(elem);
     fileInput.after(barContainer);
     fileInput.fileupload({ 
-      add: function (e, data) {
-        fd["Content-Type"] = data.files[0].type;  
-        data.formData = fd;
-        data.submit();
-      },
+      // add: function (e, data) {
+      //   fd["Content-Type"] = data.files[0].type;  
+      //   data.formData = fd;
+      //   console.log(fd["Content-Type"]);
+      //   data.submit();
+      // }, 
       fileInput:       fileInput,
       url:             form.data('url'),
       type:            'POST',
@@ -67,12 +81,8 @@ $(function() {
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = '//' + form.data('host') + '/' + key;
-<<<<<<< Updated upstream
-
-        // create hidden field        
-=======
-        // create hidden field
->>>>>>> Stashed changes
+        console.log(url);
+        
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         form.append(input);
       },
