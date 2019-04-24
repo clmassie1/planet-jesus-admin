@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  episode_title: MyString
+  episode_description: MyString
+  image_url: MyString
+  episode_url: MyString
+
+two:
+  episode_title: MyString
+  episode_description: MyString
+  image_url: MyString
+  episode_url: MyString

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Episode title:</strong>
+  <%= @podcast.episode_title %>
+</p>
+
+<p>
+  <strong>Episode description:</strong>
+  <%= @podcast.episode_description %>
+</p>
+
+<%= image_tag @podcast.image_url %>
+
+<%= audio_tag @podcast.episode_url, controls: true, autoplay: false %>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @podcast.image_url %>
+</p>
+
+<p>
+  <strong>Episode url:</strong>
+  <%= @podcast.episode_url %>
+</p>
+
+<%= link_to 'Edit', edit_podcast_path(@podcast) %> |
+<%= link_to 'Back', podcasts_path %>
